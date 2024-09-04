@@ -1,7 +1,9 @@
 import './header.css'
 import { createButton } from '../components/button/button.js'
+
 const header = document.querySelector('header')
 header.classList.add('flexContainer')
+
 const logo = document.createElement('img')
 logo.src = './src/header/header_assets/icono_pinterest.png'
 logo.classList.add('logo')
@@ -12,6 +14,11 @@ divButtons.classList.add('flexContainer')
 createButton('Inicio', 'secondaryButton', divButtons)
 createButton('Explorar', 'terciaryButton', divButtons)
 createButton('Crear', 'terciaryButton', divButtons)
+
+const searcher = document.createElement('input')
+searcher.id = 'searcher'
+searcher.placeholder = '🔎 Buscar'
+searcher.classList.add('searcher')
 
 const divProfile = document.createElement('div')
 divProfile.id = 'divProfile'
@@ -29,6 +36,7 @@ iconLog.classList.add('iconLog', 'flexContainer')
 
 header.append(logo)
 header.append(divButtons)
+header.append(searcher)
 divProfile.append(iconNotifications)
 divProfile.append(iconCommentary)
 divProfile.append(iconLog)
