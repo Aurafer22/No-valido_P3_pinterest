@@ -1,5 +1,5 @@
 import { getImages } from '../../../main'
-import { printCards } from './src/components/cards/cards.js'
+import { printCards } from '../cards/cards.js'
 import './searcher.css'
 
 const header = document.querySelector('header')

@@ -1,5 +1,5 @@
 import './cards.css'
-import { searcher } from './src/components/searcher/searcher.js'
+import { searcher } from '../searcher/searcher.js'
 import { getImages } from '../../../main'
 
 const main = document.querySelector('#main')
