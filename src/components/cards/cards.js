@@ -4,6 +4,8 @@ import { getImages } from '../../../main'
 
 const main = document.querySelector('#main')
 const results = getImages('dogs')
+console.log(results)
+
 export const printCards = (results) => {
   results = getImages(searcher.value)
   for (const element of results) {

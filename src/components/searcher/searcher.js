@@ -9,3 +9,5 @@ searcher.id = 'searcher'
 searcher.placeholder = '🔎 Buscar'
 searcher.classList.add('searcher')
 header.insertBefore(searcher, profile)
+
+searcher.addEventListener('change', () => getImages(searcher.value))
