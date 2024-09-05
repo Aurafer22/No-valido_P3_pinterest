@@ -1,9 +1,8 @@
 import getImages from '../components/cards/cards'
 
-export default function printImages(element) {
-  const resultsContainer = document.querySelector('#main')
-  resultsContainer.innerHTML = ''
+export default function printImages(element, parentNode) {
+  parentNode.innerHTML = ''
   element.foreach((element) => {
-    getImages(resultsContainer, element)
+    getImages(parentNode, element)
   })
 }

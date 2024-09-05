@@ -4,7 +4,10 @@ const fetchApi = (query = 'rosa', page = 1, per_page = 15) => {
     `https://api.unsplash.com/search/photos?query=${query}&page=${page}&per_page=${per_page}&client_id=${accesKey}`
   )
     .then((response) => response.json())
-    .then((searched) => console.log(searched))
+    .then((searched) => {
+      console.log(searched)
+      return searched
+    })
 }
 
 export default fetchApi

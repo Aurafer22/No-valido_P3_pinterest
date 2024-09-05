@@ -13,8 +13,10 @@ async function mainContent(main) {
   const divResults = document.createElement('div')
   divResults.classList.add('flexContainer', 'divResults')
   const response = await fetchApi()
-  const element = response.data.results
+  const element = response.results
   main.append(divResults)
-  printImages(element)
+  printImages(element, divResults)
   createButton('Cargar más', 'primaryButton', main)
 }
+
+mainContent(main)
