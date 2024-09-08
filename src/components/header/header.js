@@ -12,9 +12,9 @@ export default function getHeader(parentNode) {
 
   const divButtons = document.createElement('div')
   divButtons.classList.add('flexContainer')
-  createButton('Inicio', 'secondaryButton', divButtons)
-  createButton('Explorar', 'terciaryButton', divButtons)
-  createButton('Crear', 'terciaryButton', divButtons)
+  createButton('inicioBtn', 'Inicio', 'secondaryButton', divButtons)
+  createButton('explorarBtn', 'Explorar', 'terciaryButton', divButtons)
+  createButton('crearBtn', 'Crear', 'terciaryButton', divButtons)
 
   const searcher = document.createElement('input')
   searcher.id = 'searcher'
