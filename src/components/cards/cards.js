@@ -1,8 +1,9 @@
 import './cards.css'
 
 const main = document.querySelector('#main')
+const divResults = document.querySelector('.divResults')
 
-export default function getImages(parentNode, element) {
+export default function getImages(element) {
   const divCard = document.createElement('div')
   divCard.classList.add('flexContainer', 'colum')
 
@@ -12,7 +13,7 @@ export default function getImages(parentNode, element) {
 
   const divAuthor = document.createElement('div')
   const author = document.createElement('img')
-  author.src = element.user.profile_image.small
+  author.src = element.user.profile_image.medium
   author.classList.add('author')
 
   const divData = document.createElement('div')
@@ -32,5 +33,6 @@ export default function getImages(parentNode, element) {
   divShare.append(iconShare, pictureDate)
   divData.append(nameAuthor, divShare)
   divCard.append(image, divAuthor, divData)
-  parentNode.append(divCard)
+  divResults.append(divCard)
+  main.append(divResults)
 }

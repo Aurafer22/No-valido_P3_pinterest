@@ -13,7 +13,7 @@ divResults.classList.add('flexContainer', 'divResults')
 main.append(divResults)
 const printResults = async () => {
   const response = await fetchApi()
-  const element = response.data.results
+  const element = await response.data.results
   printImages(element, divResults)
 }
 printResults()
@@ -26,5 +26,4 @@ const cargarMasBtn = createButton(
   divCargarMas
 )
 main.append(divCargarMas)
-cargarMasBtn.addEventListener('click', () => {})
-mainContent()
+// cargarMasBtn.addEventListener('click', () => {})
