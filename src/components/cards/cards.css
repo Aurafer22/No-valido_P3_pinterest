@@ -1,0 +1,11 @@
+.colum {
+  flex-direction: column;
+}
+.image {
+  width: 100%;
+  object-fit: cover;
+}
+.divResults > div:nth-child(1) {
+  grid-row: 1/4;
+  grid-column: 1;
+}

@@ -1,9 +1,10 @@
-import getImages from '../components/cards/cards'
+import cards from '../components/cards/cards'
+import fetchApi from './fetch'
 
-export default function printImages(response) {
+export default async function printImages(photos) {
   const divResults = document.querySelector('.divResults')
   divResults.innerHTML = ''
-  response.forEach((element) => {
-    getImages(element)
+  photos.forEach((element) => {
+    cards(element)
   })
 }

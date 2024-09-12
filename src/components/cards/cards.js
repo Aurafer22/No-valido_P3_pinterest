@@ -1,9 +1,8 @@
 import './cards.css'
 
-const main = document.querySelector('#main')
-const divResults = document.querySelector('.divResults')
-
-export default function getImages(element) {
+export default function cards(element) {
+  const main = document.querySelector('#main')
+  const divResults = document.querySelector('.divResults')
   const divCard = document.createElement('div')
   divCard.classList.add('flexContainer', 'colum')
 
@@ -28,6 +27,7 @@ export default function getImages(element) {
   iconShare.src = './assets/icon _upload share_.svg'
   iconShare.classList.add('iconShare')
   const pictureDate = document.createElement('p')
+  pictureDate.textContent = element.updated_at
 
   divAuthor.append(author)
   divShare.append(iconShare, pictureDate)
