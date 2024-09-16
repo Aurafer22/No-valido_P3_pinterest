@@ -6,4 +6,5 @@ export const createButton = (id, texto, clase, nodeParent) => {
   button.textContent = texto
   button.classList.add('button', clase)
   nodeParent.append(button)
+  return button
 }

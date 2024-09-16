@@ -1,5 +1,9 @@
 import './header.css'
 import { createButton } from '../button/button.js'
+import printImages from '../../utils/printImages.js'
+import fetchApi from '../../utils/fetch.js'
+
+const main = document.querySelector('#main')
 
 export default function getHeader(parentNode) {
   const header = document.querySelector('header')
@@ -9,12 +13,31 @@ export default function getHeader(parentNode) {
   logo.src = './src/components/header/header_assets/icono_pinterest.png'
   logo.classList.add('logo')
   logo.alt = 'logo Pinterest'
-
+  logo.addEventListener('click', async (e) => {
+    const response = await fetchApi()
+    const photos = response.results
+    printImages(photos)
+  })
   const divButtons = document.createElement('div')
   divButtons.classList.add('flexContainer')
-  createButton('inicioBtn', 'Inicio', 'secondaryButton', divButtons)
-  createButton('explorarBtn', 'Explorar', 'terciaryButton', divButtons)
-  createButton('crearBtn', 'Crear', 'terciaryButton', divButtons)
+  const btnInicio = createButton(
+    'inicioBtn',
+    'Inicio',
+    'secondaryButton',
+    divButtons
+  )
+  const btnExplora = createButton(
+    'explorarBtn',
+    'Explorar',
+    'terciaryButton',
+    divButtons
+  )
+  const btnCrea = createButton(
+    'crearBtn',
+    'Crear',
+    'terciaryButton',
+    divButtons
+  )
 
   const searcher = document.createElement('input')
   searcher.id = 'searcher'
