@@ -1,4 +1,4 @@
-import { page, searchQuery } from '../../../main'
+import { searchQuery, setPage } from '../../../main'
 import fetchApi from '../../utils/fetch'
 import printImages from '../../utils/printImages'
 import { createButton } from '../button/button'
@@ -22,13 +22,10 @@ export default async function home(parentNode) {
     divCargarMas
   )
   cargarMasBtn.addEventListener('click', async () => {
-    let localPage = page
-    if (localPage) {
-      localPage++
-      const response = await fetchApi(searchQuery, localPage)
-      const nextPage = response.results
-      printImages(nextPage)
-    }
+    setPage(newValue)
+    const response = await fetchApi(searchQuery, newValue)
+    const nextPage = response.results
+    printImages(nextPage)
   })
   parentNode.append(divResults, divCargarMas)
 }
